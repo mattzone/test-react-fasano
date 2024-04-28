@@ -5,13 +5,10 @@ export default function Row(props) {
   const [sign, setSign] = useState('+');
   const [value, setValue] = useState(0);
 
-
-
   const disableInput = () => {
     setIsDisabled(!isDisabled);
     props.onChangeDisable(!isDisabled);
   }
-
 
   const changeValue = (event) => {
     // props.onChangeInput(sign + e.target.value);
