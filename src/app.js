@@ -78,7 +78,7 @@ function App() {
    * delete the specific row
    */
   useEffect(() => {
-    if (indexDelete) {
+    if (indexDelete != null) {
       const updateRows = rows.filter(row => parseInt(row.key) !== indexDelete);
       delete inputsValue[indexDelete];
 
