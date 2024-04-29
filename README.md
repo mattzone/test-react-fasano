@@ -3,9 +3,12 @@
 Test per la posizione di Front end presso Across
 
 ## Richiesta del test
+
 ### Welcome to the React Challenge
+
 Taken the html structure in the example below (index.html),
 write a simple React calculator (adder) su that has the following mandatory functionalities:
+
 <ul>
   <li>rows can be added and removed</li>
   <li>each row have a sign (minus or plus)</li>
@@ -21,6 +24,7 @@ ES6+ Javascript knowledge is matter of evaluation
 Look and feel of the solution is a plus
 
 ### Example below
+
 <div class="wrapper">
   <div>
     <button>Add row</button>
@@ -63,12 +67,12 @@ Look and feel of the solution is a plus
 
 Il sito è stato sviluppato utilizzando [React](https://it.legacy.reactjs.org/) insieme al framework di componenti di Material Design [Vuetify](https://vuetifyjs.com/en/).
 
-## 💿 Install
+## 💿 Installazione
 
 Per installare e utilizzare il progetto in locale e produzione si può utilizzare npm
 
-| NPM | |
-| ------------- | -------------------------------------------------------------------------------------------------------------- |
-| `npm install` | installla tutte le dipendenze necessarie |
-| `npm start`   | esegue l'app in development mode. Il sito sarà disponibile al seguente link: [http://localhost:3000](http://localhost:3000) |
-| `npm run build`   | esegue la build dell'applicazione per la produzione. sarà disponibile nella cartella `build`|
+| NPM             |                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `npm install`   | installla tutte le dipendenze necessarie                                                                                    |
+| `npm start`     | esegue l'app in development mode. Il sito sarà disponibile al seguente link: [http://localhost:3000](http://localhost:3000) |
+| `npm run build` | esegue la build dell'applicazione per la produzione. sarà disponibile nella cartella `build`                                |

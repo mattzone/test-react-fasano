@@ -3,7 +3,6 @@ import Row from './components/row';
 import React, { useState, useEffect } from 'react';
 import SplashScreen from './components/splashScreen';
 
-
 function App() {
   const [resultValue, setResultValue] = useState(0),
     [inputsValue, setInputsValue] = useState({}),
@@ -25,34 +24,36 @@ function App() {
    * add a row in the rows array
    */
   const addRows = () => {
-    setRows(rows => [...rows,
-    <Row
-      key={lastIndex}
-      onChangeInput={value => handleInputChange(lastIndex, value)}
-      onChangeDisable={value => handleDisableChange(lastIndex, value)}
-      onDeleteRow={() => handleDeleteRow(lastIndex)}
-    ></Row>]);
+    setRows(rows => [
+      ...rows,
+      <Row
+        key={lastIndex}
+        onChangeInput={value => handleInputChange(lastIndex, value)}
+        onChangeDisable={value => handleDisableChange(lastIndex, value)}
+        onDeleteRow={() => handleDeleteRow(lastIndex)}
+      ></Row>,
+    ]);
 
     setLastIndex(lastIndex + 1);
   };
 
   /**
-   * 
+   *
    * @param {int} index - index of the row
    * @param {string} value - new input value
    * set the value for a specific row define by index
    */
   const handleInputChange = (index, value) => {
     inputsValue[index] = {
-      value: parseInt(value)
-    }
+      value: parseInt(value),
+    };
 
     setInputsValue(inputsValue);
     setIsChangeInputsValue(true);
   };
 
   /**
-   * 
+   *
    * @param {int} index - index of the row
    * @param {bool} value - value of the disabled flag
    * set the disabled value for a specific row define by index
@@ -65,12 +66,12 @@ function App() {
   };
 
   /**
-   * 
-   * @param {int} index 
+   *
+   * @param {int} index
    * set the index to delete
    */
-  const handleDeleteRow = (index) => {
-    setIndexDelete(index)
+  const handleDeleteRow = index => {
+    setIndexDelete(index);
   };
 
   /**
@@ -78,7 +79,6 @@ function App() {
    */
   useEffect(() => {
     if (indexDelete) {
-
       const updateRows = rows.filter(row => parseInt(row.key) !== indexDelete);
       delete inputsValue[indexDelete];
 
@@ -96,7 +96,7 @@ function App() {
 
       for (const index in inputsValue) if (!inputsValue[index].isDisabled) tot += inputsValue[index].value;
 
-      setResultValue(tot)
+      setResultValue(tot);
       setIsChangeInputsValue(false);
     }
   }, [inputsValue, isChangeInputsValue]);
@@ -107,23 +107,27 @@ function App() {
         <SplashScreen />
       ) : (
         <div>
-          <h1 className="text-5xl font-extrabold dark:text-white mb-11 text-center">Matteo Fasano<br /><small className="ms-2 font-semibold text-gray-500 dark:text-gray-400">react challenge</small></h1>
+          <h1 className="text-5xl font-extrabold dark:text-white mb-11 text-center">
+            Matteo Fasano
+            <br />
+            <small className="ms-2 font-semibold text-gray-500 dark:text-gray-400">react challenge</small>
+          </h1>
 
           <div>
-            <div className='mb-5'>
-              <button onClick={addRows} className='bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-blue-500 hover:cursor-pointer'>Add rows</button>
+            <div className="mb-5">
+              <button
+                onClick={addRows}
+                className="bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-blue-500 hover:cursor-pointer"
+              >
+                Add rows
+              </button>
             </div>
             {rows}
-            <div className='mt-5'>
-              Result: {resultValue}
-            </div>
+            <div className="mt-5">Result: {resultValue}</div>
           </div>
-
         </div>
-      )
-      }
-
-    </div >
+      )}
+    </div>
   );
 }
 
