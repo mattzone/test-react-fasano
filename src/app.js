@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 1000); // 2 seconds
+    }, 700); // 2 seconds
 
     return () => clearTimeout(timer); // Clear the timer when the component unmounts
   }, []);
@@ -117,14 +117,18 @@ function App() {
 
             <div>
               <div className="mb-5">
+                {/* add row button */}
                 <button
                   onClick={addRows}
                   className="bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-blue-500 hover:cursor-pointer"
                 >
-                  Add rows
+                  Add row
                 </button>
+                {/* /button */}
               </div>
               {rows}
+
+              {/* result live */}
               <div className="mt-5">Result: {resultValue}</div>
             </div>
           </div>
