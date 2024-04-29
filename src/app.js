@@ -9,16 +9,7 @@ function App() {
     [isChangeInputsValue, setIsChangeInputsValue] = useState(false),
     [rows, setRows] = useState([]),
     [lastIndex, setLastIndex] = useState(0),
-    [indexDelete, setIndexDelete] = useState(null),
-    [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 700); // 2 seconds
-
-    return () => clearTimeout(timer); // Clear the timer when the component unmounts
-  }, []);
+    [indexDelete, setIndexDelete] = useState(null);
 
   /**
    * add a row in the rows array
@@ -103,36 +94,29 @@ function App() {
 
   return (
     <div className="flex justify-center items-center h-screen bg-slate-900 p-4 text-white">
-      {showSplash ?
-        (
-          <SplashScreen />
-        )
-        :
-        (
-          <div>
-            <div className='text-center mb-11 text-6xl'>
-              <h1 className="font-extrabold text-white">Matteo Fasano</h1>
-              <small className="text-4xl font-semibold text-gray-400">react challenge</small>
-            </div>
+      <div>
+        <div className='text-center mb-11 text-6xl'>
+          <h1 className="font-extrabold text-white">Matteo Fasano</h1>
+          <small className="text-4xl font-semibold text-gray-400">react challenge</small>
+        </div>
 
-            <div>
-              <div className="mb-5">
-                {/* add row button */}
-                <button
-                  onClick={addRows}
-                  className="bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-blue-500 hover:cursor-pointer"
-                >
-                  Add row
-                </button>
-                {/* /button */}
-              </div>
-              {rows}
-
-              {/* result live */}
-              <div className="mt-5">Result: {resultValue}</div>
-            </div>
+        <div>
+          <div className="mb-5">
+            {/* add row button */}
+            <button
+              onClick={addRows}
+              className="bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-blue-500 hover:cursor-pointer"
+            >
+              Add row
+            </button>
+            {/* /button */}
           </div>
-        )}
+          {rows}
+
+          {/* result live */}
+          <div className="mt-5">Result: {resultValue}</div>
+        </div>
+      </div>
     </div>
   );
 }
