@@ -92,7 +92,7 @@ function App() {
   }, [inputsValue, isChangeInputsValue]);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-slate-900 p-4 text-white">
+    <div className="text-center content">
       <div>
         <div className='text-center mb-11 text-6xl'>
           <h1 className="font-extrabold text-white">Matteo Fasano</h1>
@@ -110,10 +110,17 @@ function App() {
             </button>
             {/* /button */}
           </div>
-          {rows}
+          <div className='overflow-auto h-96 w-fit m-auto px-5'>
+            {
+              rows.length ?
+                rows
+                :
+                (<div className='flex justify-center items-center h-full'><div className='text-2xl font-semibold text-gray-500'>Add row to see the result live</div></div>)
+            }
+          </div>
 
           {/* result live */}
-          <div className="mt-5">Result: {resultValue}</div>
+          <div className="mt-5 text-gray-400 text-3xl">Result: {resultValue}</div>
         </div>
       </div>
     </div>
