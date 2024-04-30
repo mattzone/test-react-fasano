@@ -94,9 +94,9 @@ function App() {
   return (
     <div className="text-center content">
       <div>
-        <div className='text-center mb-11 text-6xl'>
+        <div className='text-center mb-11 lg:text-6xl text-8xl'>
           <h1 className="font-extrabold text-white">Matteo Fasano</h1>
-          <small className="text-4xl font-semibold text-gray-400">react challenge</small>
+          <small className="lg:text-4xl text-6xl font-semibold text-gray-400">react challenge</small>
         </div>
 
         <div>
@@ -104,7 +104,7 @@ function App() {
             {/* add row button */}
             <button
               onClick={addRows}
-              className="bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-blue-500 hover:cursor-pointer"
+              className="font-bold bg-gray-700 lg:p-1.5 lg:rounded-lg lg:px-2.5 lg:text-xl hover:bg-blue-500 hover:cursor-pointer text-5xl p-5 rounded-3xl uppercase"
             >
               Add row
             </button>
@@ -115,12 +115,12 @@ function App() {
               rows.length ?
                 rows
                 :
-                (<div className='flex justify-center items-center h-full'><div className='text-2xl font-semibold text-gray-500'>Add row to see the result live</div></div>)
+                (<div className='flex justify-center items-center h-full'><div className='lg:text-2xl text-4xl font-semibold text-gray-500'>Add row to see the result live</div></div>)
             }
           </div>
 
           {/* result live */}
-          <div className="mt-5 text-gray-400 text-3xl">Result: {resultValue}</div>
+          <div className="mt-5 text-gray-400 lg:text-3xl text-6xl">Result: {resultValue}</div>
         </div>
       </div>
     </div>

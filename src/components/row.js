@@ -42,12 +42,12 @@ export default function Row(props) {
   }, [sign, value, props]);
 
   return (
-    <div className="my-5">
+    <div className="my-10 lg:my-5">
       {/* select sign */}
       <select
         value={sign}
         onChange={changeSign}
-        className="text-sm rounded-lg p-1 mr-5 bg-gray-700 focus:ring-blue-500 focus:border-blue-500 border border-gray-700 hover:border-blue-500 hover:cursor-pointer"
+        className="lg:text-lg lg:rounded-lg lg:p-1 mr-5 bg-gray-700 focus:ring-blue-500 focus:border-blue-500 border border-gray-700 hover:border-blue-500 hover:cursor-pointer text-4xl rounded-xl p-2 font-semibold"
       >
         <option value="+">+</option>
         <option value="-">-</option>
@@ -60,7 +60,7 @@ export default function Row(props) {
         disabled={isDisabled}
         value={value}
         onChange={changeValue}
-        className="border border-gray-700 text-sm rounded-lg p-1.5 mr-5 bg-gray-700 focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 disabled:bg-gray-400 disabled:text-gray-500 hover:cursor-pointer"
+        className="border border-gray-700 lg:text-lg text-4xl rounded-xl p-4 lg:rounded-lg lg:p-1.5 mr-5 bg-gray-700 focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 disabled:bg-gray-400 disabled:text-gray-500 hover:cursor-pointer font-semibold"
       />
       {/* /input */}
 
@@ -70,7 +70,7 @@ export default function Row(props) {
 
       {/* delete the row */}
       <button
-        className="bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-red-500 hover:cursor-pointer"
+        className="bg-gray-700 lg:p-1.5 lg:rounded-lg lg:px-2.5 lg:text-lg hover:bg-red-500 hover:cursor-pointer text-4xl rounded-xl p-4 font-semibold uppercase"
         onClick={props.onDeleteRow}
       >
         Delete
@@ -78,7 +78,7 @@ export default function Row(props) {
 
       {/* disable the row */}
       <button
-        className="ml-2 bg-gray-700 p-1.5 rounded-lg px-2.5 hover:bg-gray-500 hover:cursor-pointer"
+        className="ml-2 bg-gray-700 lg:p-1.5 lg:rounded-lg lg:px-2.5 lg:text-lg hover:bg-gray-500 hover:cursor-pointer text-4xl rounded-xl p-4 font-semibold uppercase"
         onClick={disableInput}
       >
         Disable
