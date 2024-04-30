@@ -14,20 +14,20 @@ export default function Row(props) {
   };
 
   /**
-   * 
+   *
    * @param {object} event
-   * @returns 
-   * 
+   * @returns
+   *
    * method triggerde when the value of the input change
    * set the new value
    */
   const changeValue = event => setValue(event.target.value);
 
   /**
-   * 
-   * @param {object} event 
-   * @returns 
-   * 
+   *
+   * @param {object} event
+   * @returns
+   *
    * method triggered when the sign change
    * set the new sign
    */

@@ -94,7 +94,7 @@ function App() {
   return (
     <div className="text-center content">
       <div>
-        <div className='text-center mb-11 lg:text-6xl text-8xl'>
+        <div className="text-center mb-11 lg:text-6xl text-8xl">
           <h1 className="font-extrabold text-white">Matteo Fasano</h1>
           <small className="lg:text-4xl text-6xl font-semibold text-gray-400">react challenge</small>
         </div>
@@ -110,13 +110,14 @@ function App() {
             </button>
             {/* /button */}
           </div>
-          <div className='overflow-auto h-96 w-fit m-auto px-5'>
-            {
-              rows.length ?
-                rows
-                :
-                (<div className='flex justify-center items-center h-full'><div className='lg:text-2xl text-4xl font-semibold text-gray-500'>Add row to see the result live</div></div>)
-            }
+          <div className="overflow-auto h-96 w-fit m-auto px-5">
+            {rows.length ? (
+              rows
+            ) : (
+              <div className="flex justify-center items-center h-full">
+                <div className="lg:text-2xl text-4xl font-semibold text-gray-500">Add row to see the result live</div>
+              </div>
+            )}
           </div>
 
           {/* result live */}
